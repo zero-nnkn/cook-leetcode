@@ -23,6 +23,6 @@ class Solution:
             write_pos += 1
             chars[write_pos] = str(cur_count)
         chars = chars[:write_pos+1]
-        
+
         return len(chars)
         

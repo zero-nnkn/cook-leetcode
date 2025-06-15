@@ -1,0 +1,25 @@
+class Solution:
+    def decodeString(self, s: str) -> str:
+        stack = []
+        for c in s:
+            num = ""
+            string = ""
+
+            if c == "]":
+                while stack and stack[-1] != "[":
+                    string = stack.pop() + string
+                stack.pop()
+                while stack and stack[-1].isnumeric():
+                    num = stack.pop() + num
+                stack.append(string * int(num))
+            else:
+                stack.append(c)
+        return "".join(stack)
+
+                    
+
+
+
+
+
+        

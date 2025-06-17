@@ -1,0 +1,26 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head is None:
+            return head
+        if head.next is None:
+            return None
+
+        pointer = head
+        count = 1
+        while pointer.next is not None:
+            pointer = pointer.next
+            count += 1
+
+        middle = int(count / 2)
+        pointer = head
+        for i in range(middle - 1):
+            pointer = pointer.next
+        
+        if pointer is not None and pointer.next is not None:
+            pointer.next = pointer.next.next
+        return head

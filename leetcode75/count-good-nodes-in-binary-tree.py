@@ -18,7 +18,7 @@ class Solution:
         self.dfs(root.right, max_val)
 
     def goodNodes(self, root: TreeNode) -> int:
-        self.dfs(root, 0)
+        self.dfs(root, -inf)
         return self.count
         
     

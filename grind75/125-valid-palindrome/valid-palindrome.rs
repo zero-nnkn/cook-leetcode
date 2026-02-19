@@ -11,7 +11,7 @@ impl Solution {
             while left < right && !chars[right].is_alphanumeric() {
                 right -= 1
             }
-            if left >= right {
+            if left >= right { // in case right is negative -> overflow
                 break;
             }
 

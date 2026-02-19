@@ -6,11 +6,10 @@ class Solution:
                 left += 1
             while right > left and not s[right].isalnum():
                 right -= 1
-            if left < right:
-                if s[left].lower() != s[right].lower():
-                    return False
-                left += 1
-                right -= 1
-            else:
-                break
+
+            if s[left].lower() != s[right].lower():
+                return False
+            left += 1
+            right -= 1
+
         return True

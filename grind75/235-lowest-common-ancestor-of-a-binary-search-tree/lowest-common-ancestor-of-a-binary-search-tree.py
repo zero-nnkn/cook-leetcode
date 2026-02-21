@@ -13,11 +13,7 @@ class Solution:
         q: 'TreeNode'
     ) -> 'TreeNode':
         def dfs(root, small, big):
-            if root.val == small.val:
-                return small
-            elif root.val == big.val:
-                return big
-            elif small.val < root.val < big.val:
+            if small.val <= root.val <= big.val:
                 return root
             elif root.val < small.val:
                 return dfs(root.right, small, big)

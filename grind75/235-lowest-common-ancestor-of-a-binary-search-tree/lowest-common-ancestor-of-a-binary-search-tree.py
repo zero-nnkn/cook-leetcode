@@ -12,18 +12,10 @@ class Solution:
         p: 'TreeNode', 
         q: 'TreeNode'
     ) -> 'TreeNode':
-        def dfs(root, small, big):
-            if small.val <= root.val <= big.val:
-                return root
-            elif root.val < small.val:
-                return dfs(root.right, small, big)
-            elif root.val > big.val:
-                return dfs(root.left, small, big)
-        
-        if p.val < q.val:
-            return dfs(root, p, q)
+        if root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        elif root.val < p.val and root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
         else:
-            return dfs(root, q, p)
-
-
-        
+            return root
+            

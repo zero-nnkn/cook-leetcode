@@ -3,9 +3,6 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        if n==1:
-            return 1
-        
         left = 1
         right = n
         while left < right:

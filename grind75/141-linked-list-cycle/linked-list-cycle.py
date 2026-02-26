@@ -20,7 +20,7 @@ class Solution:
             return False
 
         slow, fast = head, head.next
-        while slow is not None and fast is not None and fast.next is not None:
+        while fast is not None and fast.next is not None:
             if slow == fast:
                 return True
             slow = slow.next
